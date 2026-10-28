@@ -1,0 +1,186 @@
+/* ====================================================================
+   PURIKURA STUDIO ★ CLEAN MODERN TACTILE SCRAPBOOK DESIGN SYSTEM
+   (Directly aligned with https://mypuzzle-cam.vercel.app/)
+   ==================================================================== */
+
+:root {
+  /* Modern Japanese Kawaii Tactile Palette (Purikura プリクラ) */
+  --background: #FAF7F5;
+  --surface: #FFFFFF;
+  --surface-container-low: #F6F2F0;
+  --surface-container: #F0EAE8;
+  --surface-container-high: #EAE2E0;
+  --surface-dim: #DED3D2;
+
+  /* Primary Accent: Japanese Sakura Rose (Tokyo Purikura) */
+  --primary: #FF6584;
+  --primary-hover: #E04B6D;
+  --primary-light: #FFF0F4;
+  --primary-border: #FFD4E2;
+  --primary-container: #FFE4EC;
+  --primary-deep: #C73055;
+
+  /* Secondary Accent: Japanese Matcha & Vintage Indigo */
+  --secondary: #4B7B9E;
+  --secondary-hover: #386485;
+  --secondary-light: #F0F6FA;
+  --secondary-container: #D6ECFA;
+
+  /* Tertiary Accent: Fresh Matcha / Wasabi */
+  --tertiary: #10B981;
+  --tertiary-light: #ECFDF5;
+  --lavender: #8B5CF6;
+  --lavender-light: #F5F3FF;
+
+  /* Text & Outlines */
+  --text-main: #232226;
+  --text-sub: #5F5960;
+  --text-muted: #968D94;
+  --outline: #968D94;
+  --outline-variant: #FFD4E2;
+
+  /* Typography Stacks */
+  --font-typewriter: 'Courier Prime', monospace;
+  --font-ui: 'Nunito Sans', 'Outfit', sans-serif;
+  --font-body: 'Noto Serif', Georgia, serif;
+  --font-jp: 'Zen Maru Gothic', sans-serif;
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 14px rgba(64, 48, 32, 0.05);
+  --shadow-paper: 0 10px 30px -5px rgba(64, 48, 32, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 18px 40px -8px rgba(123, 84, 85, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--background);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(244, 194, 194, 0.15) 0%, transparent 25%),
+    radial-gradient(circle at 90% 80%, rgba(196, 227, 255, 0.15) 0%, transparent 25%),
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(130, 116, 115, 0.02) 40px, rgba(130, 116, 115, 0.02) 41px);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background floating decorative elements */
+.app-bg-decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  background: radial-gradient(circle, #FFD4DC 0%, #F4C2C2 100%);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.28;
+  animation: floatPetal 16s infinite linear;
+}
+
+@keyframes floatPetal {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.35; }
+  85% { opacity: 0.35; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+/* Tactile Paper Sheet Cards */
+.paper-card {
+  background: var(--surface);
+  border: 1px solid rgba(212, 194, 194, 0.45);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-paper);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.paper-card:hover {
+  border-color: rgba(123, 84, 85, 0.3);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Washi Tape Accent Decor (Signature of previous project) */
+.washi-tape-accent {
+  position: absolute;
+  background-color: rgba(123, 84, 85, 0.32);
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 10px, rgba(0, 0, 0, 0.03) 10px, rgba(0, 0, 0, 0.03) 20px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(2px);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Stitched Border CTA Button (Matching previous project) */
+.stitched-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--secondary);
+  color: #FFFFFF;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -4px rgba(68, 98, 121, 0.35);
+  user-select: none;
+  text-decoration: none;
+}
+
+.stitched-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: var(--primary);
+  box-shadow: 0 12px 30px -4px rgba(123, 84, 85, 0.4);
+}
+
+.stitched-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
