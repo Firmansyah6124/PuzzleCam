@@ -22,7 +22,6 @@ export default function Lobby({
             <div className="polaroid-photo polaroid-purikura-left">
               <div className="purikura-sample-badge">プリクラ ★</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">local_florist</span>
-              <div className="washi-tape-accent tape-left"></div>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidLeft}</span>
           </div>
@@ -31,7 +30,6 @@ export default function Lobby({
             <div className="polaroid-photo polaroid-purikura-right">
               <div className="purikura-sample-badge">3x3 パズル</div>
               <span className="material-symbols-outlined polaroid-placeholder-icon">extension</span>
-              <div className="washi-tape-accent tape-right"></div>
             </div>
             <span className="polaroid-caption">{t.hero.polaroidRight}</span>
           </div>
@@ -39,15 +37,13 @@ export default function Lobby({
 
         {/* Central Paper Card with Japanese Kawaii Flare */}
         <div className="hero-paper-card">
-          <div className="washi-tape-accent tape-hero-top"></div>
-
           <div className="hero-tagline-badge">
             <span className="material-symbols-outlined text-[15px]">local_florist</span>
             <span>{t.hero.badge}</span>
           </div>
 
           <div className="hero-title-group">
-            <h1 className="hero-main-title typewriter-title">
+            <h1 className="hero-main-title">
               {t.hero.title}
             </h1>
             <span className="hero-kanji-sub">{t.hero.titleJp}</span>
@@ -61,7 +57,7 @@ export default function Lobby({
 
           <button
             id="landingStartBtn"
-            className="hero-start-cta stitched-btn"
+            className="hero-start-cta btn-primary-gradient"
             onClick={() => {
               sfx.playSuccess();
               onStart();
@@ -89,7 +85,6 @@ export default function Lobby({
         <div className="lobby-grid">
           {/* Left: Setup Configuration */}
           <div className="paper-card setup-card">
-            <div className="washi-tape-accent tape-card-corner"></div>
             <div className="card-header">
               <span className="card-badge">{t.setup.stepBadge}</span>
               <h2 className="card-title">{t.setup.title}</h2>
@@ -166,7 +161,7 @@ export default function Lobby({
 
             {/* Start CTA */}
             <button
-              className="hero-start-cta stitched-btn w-full-btn"
+              className="hero-start-cta btn-primary-gradient w-full-btn"
               onClick={() => {
                 sfx.playSuccess();
                 onStart();
@@ -211,7 +206,7 @@ export default function Lobby({
       <section className="lobby-content-section" id="how-it-works">
         <div className="section-title-wrap">
           <span className="section-badge">{t.howItWorks.badge}</span>
-          <h2 className="section-heading typewriter-sub">{t.howItWorks.heading}</h2>
+          <h2 className="section-heading">{t.howItWorks.heading}</h2>
           <p className="section-subheading">
             {t.howItWorks.subheading}
           </p>
@@ -237,7 +232,7 @@ export default function Lobby({
       <section className="lobby-content-section" id="features">
         <div className="section-title-wrap">
           <span className="section-badge">{t.features.badge}</span>
-          <h2 className="section-heading typewriter-sub">{t.features.heading}</h2>
+          <h2 className="section-heading">{t.features.heading}</h2>
           <p className="section-subheading">
             {t.features.subheading}
           </p>
@@ -260,12 +255,9 @@ export default function Lobby({
       <section className="lobby-content-section contact-section" id="contact">
         <div className="contact-card-container">
           <div className="contact-paper-card paper-card">
-            {/* Washi Tape Decor */}
-            <div className="washi-tape-accent tape-contact-top"></div>
-
             <span className="material-symbols-outlined contact-icon-large">mail</span>
             <span className="section-badge">{t.contact.badge}</span>
-            <h2 className="contact-title typewriter-sub">{t.contact.title}</h2>
+            <h2 className="contact-title">{t.contact.title}</h2>
             <p className="contact-desc">{t.contact.desc}</p>
 
             <div className="contact-links-grid">
