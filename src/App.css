@@ -2246,3 +2246,346 @@
   display: flex;
   justify-content: flex-end;
 }
+
+/* ================= 10. SAVE TO GOOGLE DRIVE SCREEN ================= */
+.drive-screen-section {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 30px;
+}
+
+.drive-screen-container {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.drive-header-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.drive-main-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.drive-subtitle {
+  font-size: 14px;
+  color: var(--text-sub);
+  max-width: 620px;
+  line-height: 1.5;
+}
+
+.drive-content-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .drive-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.drive-preview-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.drive-card-tag {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.drive-img-wrap {
+  background: #F8FAFC;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  max-height: 520px;
+  overflow: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.drive-strip-preview {
+  max-height: 480px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.drive-actions-card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drive-state-idle, .drive-state-uploading, .drive-state-success, .drive-state-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.drive-icon-hero {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.drive-box-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.drive-box-desc {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.5;
+  max-width: 440px;
+  margin-bottom: 12px;
+}
+
+.drive-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.drive-progress-bar-bg {
+  width: 100%;
+  max-width: 360px;
+  height: 10px;
+  background: #F1F5F9;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+  margin: 12px 0 4px;
+}
+
+.drive-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF5C8A 0%, #3B82F6 100%);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.drive-progress-text {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-sub);
+}
+
+.success-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.drive-qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #F8FAFC;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  width: 100%;
+  max-width: 340px;
+  margin: 6px 0;
+}
+
+.drive-qr-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  padding: 8px;
+  border: 1px solid #E2E8F0;
+}
+
+.qr-caption {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.drive-link-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.drive-link-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 12px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  color: var(--text-sub);
+  outline: none;
+}
+
+.drive-settings-accordion {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+}
+
+.btn-accordion-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-sub);
+  padding: 4px 0;
+}
+
+.btn-accordion-toggle:hover {
+  color: var(--primary);
+}
+
+.drive-config-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 14px;
+  background: #F8FAFC;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  text-align: left;
+}
+
+.config-hint {
+  font-size: 11.5px;
+  color: var(--text-sub);
+  line-height: 1.4;
+}
+
+.config-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.config-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  outline: none;
+}
+.config-input:focus {
+  border-color: var(--primary);
+}
+
+.drive-nav-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.drive-sub-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-text-sub {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-sub);
+  transition: color 0.2s ease;
+}
+
+.btn-text-sub:hover {
+  color: var(--primary);
+}
+
+/* Finish Screen Cloud Banner */
+.finish-cloud-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 12px;
+  font-weight: 700;
+  color: #065F46;
+}
+
+.finish-drive-link {
+  color: #2563EB;
+  text-decoration: underline;
+  font-weight: 800;
+}
+

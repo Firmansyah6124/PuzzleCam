@@ -4,6 +4,7 @@ import Lobby from './components/Lobby';
 import Booth from './components/Booth';
 import Minigame from './components/Minigame';
 import DecoratorStudio from './components/DecoratorStudio';
+import SaveToDriveScreen from './components/SaveToDriveScreen';
 import FinishScreen from './components/FinishScreen';
 import GestureModal from './components/GestureModal';
 import { getHandLandmarker } from './utils/mediapipe';
@@ -12,7 +13,7 @@ import { detectLanguage } from './utils/i18n';
 import './App.css';
 
 export default function App() {
-  const [screen, setScreen] = useState('lobby'); // lobby | booth | minigame | studio | finish
+  const [screen, setScreen] = useState('lobby'); // lobby | booth | minigame | studio | drive | finish
   const [layout, setLayout] = useState('strip_3');
   const [filter, setFilter] = useState('pure_natural');
   const [frameStyle, setFrameStyle] = useState('sakura_blossom');
@@ -22,6 +23,7 @@ export default function App() {
   const [capturedPhotos, setCapturedPhotos] = useState([]);
   const [currentSnap, setCurrentSnap] = useState(null);
   const [finalStripDataUrl, setFinalStripDataUrl] = useState(null);
+  const [driveLink, setDriveLink] = useState(null);
 
   const [aiStatus, setAiStatus] = useState({ type: 'loading', text: 'Memuat AI Sensor...' });
   const [handLandmarker, setHandLandmarker] = useState(null);
@@ -135,7 +137,7 @@ export default function App() {
 
   function handleFinishStudio(dataUrl) {
     setFinalStripDataUrl(dataUrl);
-    setScreen('finish');
+    setScreen('drive');
   }
 
   function handleRestart() {
@@ -143,6 +145,7 @@ export default function App() {
     setCapturedPhotos([]);
     setCurrentSnap(null);
     setFinalStripDataUrl(null);
+    setDriveLink(null);
     setScreen('lobby');
   }
 
@@ -253,10 +256,22 @@ export default function App() {
           />
         )}
 
+        {screen === 'drive' && (
+          <SaveToDriveScreen
+            finalStripDataUrl={finalStripDataUrl}
+            onContinue={() => setScreen('finish')}
+            onBack={() => setScreen('studio')}
+            driveLink={driveLink}
+            setDriveLink={setDriveLink}
+          />
+        )}
+
         {screen === 'finish' && (
           <FinishScreen
             finalStripDataUrl={finalStripDataUrl}
             onRestart={handleRestart}
+            driveLink={driveLink}
+            onOpenDrive={() => setScreen('drive')}
           />
         )}
       </main>
